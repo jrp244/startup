@@ -17,6 +17,7 @@ Pokemon type chart example:
 ![Pokemon_Type_Chart svg](https://github.com/jrp244/startup/assets/83414799/ba0bf1a1-a65f-4e53-88fb-00080ced1ce9)
 
 Example website: 
-![image](https://github.com/jrp244/startup/assets/83414799/bf984d41-a747-4b01-bafa-d9beee1d8245)
+![image](https://github.com/jrp244/startup/assets/83414799/0ff789e2-df14-41a9-bc3f-5915cfe78bc6)
+
 
 
