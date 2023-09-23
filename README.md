@@ -18,3 +18,7 @@ Description of technology used:
 -Authentication: Will use login/authenticate for account creation.
 -Database: Will store all the pokemon teams and player details in a database. 
 -Websocket data: Scoreboard will be update in real-time.
+
+
+![Pokemon_Type_Chart svg](https://github.com/jrp244/startup/assets/83414799/ba0bf1a1-a65f-4e53-88fb-00080ced1ce9)
+
