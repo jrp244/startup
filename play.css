@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+nav menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav menu li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav menu li a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #ccc;
+}
+
+main {
+  padding: 20px;
+}
+
+.players {
+  font-size: 18px;
+}
+
+.player-name {
+  font-weight: bold;
+}
+
+.notification {
+  list-style-type: none;
+  padding: 0;
+}
+
+.notification li {
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#count {
+  padding: 5px;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.footer-text {
+  margin-top: 10px;
+}
+
+.footer-text a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
