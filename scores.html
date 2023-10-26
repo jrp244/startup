@@ -6,12 +6,10 @@
     <title>Scores</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="styles.css">
-
   </head>
   <body>
     <header>
       <h1>Pokemon Teambuilder<sup>&reg;</sup></h1>
-
       <nav>
         <menu>
           <li><a href="index.html">Home</a></li>
@@ -21,12 +19,16 @@
           <li><a href="login.html">Login</a></li>
         </menu>
       </nav>
-
       <hr />
     </header>
 
     <main>
-      <table>
+      <button id="addScoreButton">Add Score</button>
+      <button id="editScoresButton">Edit Scores</button>
+      <button id="deleteScoresButton">Delete Scores</button>
+      <button id="clearScoresButton">Clear Scores</button>
+      
+      <table id="scoreTable">
         <thead>
           <tr>
             <th>#</th>
@@ -36,24 +38,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Steven</td>
-            <td>5</td>
-            <td>September 20, 2023</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jaren</td>
-            <td>6</td>
-            <td>September 14, 2023</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>TacticalFluke</td>
-            <td>3</td>
-            <td>Auguest 30, 2023</td>
-          </tr>
+          <!-- Scores will be added here dynamically -->
         </tbody>
       </table>
     </main>
@@ -64,5 +49,6 @@
       <br />
       <a href="https://github.com/jrp244/startup">GitHub</a>
     </footer>
+    <script src="scores.js"></script>
   </body>
 </html>
