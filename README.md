@@ -22,6 +22,36 @@ Example website:
 Example login tab:
 ![image](https://github.com/jrp244/startup/assets/83414799/89519442-a349-4569-a082-42135d1a4a82)
 
+HTML deliverables: 
 
+
+Properly structured HTML
+
+    20% HTML pages for each component of your application
+    Yes. 
+    
+    10% Links between pages as necessary
+    Yes all my pages link together
+    
+    10% Application textual content
+    All the pages have text that describes what is important for pokemon pvp.
+    
+    10% Placeholder for 3rd party service calls
+    There is a login placeholder on my home page and login page.
+    
+    10% Application images
+    Images are done for the type chart and for a few pokemon. 
+    
+    10% Login placeholder, including user name display
+    Login page has been created and linked and it displays the username after login.
+    
+    10% Database data placeholder showing content stored in the database
+    Database is actually kinda done with some js at this point, but it still has bugs. Sometimes the pokemon teams will not display correctly under the play page.
+    
+    10% WebSocket data placeholder showing where realtime communication will go
+    Play page has the realtime communication with saved teams and descriptions of those teams.
+
+10% - Multiple Git commits with meaningful comments.
+Yes. There are a bunch of git commits with meaningful comments.
 
 
