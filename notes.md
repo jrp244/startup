@@ -21,6 +21,7 @@ It seems you've provided a list of questions covering a wide range of topics rel
         You haven't provided the HTML and CSS code for this question, so I can't answer it specifically.
         ![Alt text](rofzm44oka091.png)
         https://i.redd.it/rofzm44oka091.png
+        https://www.w3schools.com/js/pic_htmltree.gif
 
     What does the following padding CSS do?
         You didn't provide the CSS code. Please provide the CSS for a specific answer.
