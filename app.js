@@ -19,6 +19,14 @@ app.get('/scores', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'scores.html'));
 });
 
+app.get('/play', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'play.html'));
+});
+
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
