@@ -122,9 +122,3 @@ function setAuthCookie(res, authToken) {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
