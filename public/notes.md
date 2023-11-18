@@ -1,6 +1,12 @@
 This was a good review on github and merge conflicts for me. I've used gitlab tons for work, but github is something that I've used but not as much. 
 https://github.com/jrp244/startup/blob/main/README.md
 
+
+./deployService.sh -k ~/prod.pem -h yourdomain.click -s simon
+➜  ssh -i ~/keys/production.pem ubuntu@53.104.2.123
+sudo service caddy restart
+npm init -y
+
 It seems you've provided a list of questions covering a wide range of topics related to web development, HTML, CSS, JavaScript, the DOM, and even some questions about command line usage and networking. I'll do my best to provide concise answers to each of these questions:
 
     In the following code, what does the link element do?
