@@ -78,9 +78,9 @@ Login deliverable
 For this deliverable I associate the votes with the logged in user.
 
     User registration - Creates a new account in the database.
-    existing user - Stores the votes under the same user if the user already exists.
-    Use MongoDB to store credentials - Stores both user and their votes.
-    Restricts functionality - You cannot vote until you have logged in. This is restricted on the frontend only. 😔
+    existing user - Stores the user and user info.
+    Use MongoDB to store credentials - Stores the user and their username/password.
+    I fixed the login issues when I go the websocket and react deliverable done so backend is also done.
 
 WebSocket deliverable
 
