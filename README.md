@@ -75,7 +75,7 @@ For this deliverable I stored the votes in the database.
 
 Login deliverable
 
-For this deliverable I associate the votes with the logged in user.
+For this deliverable I associate the pokemon team with the user.
 
     User registration - Creates a new account in the database.
     existing user - Stores the user and user info.
@@ -84,21 +84,21 @@ For this deliverable I associate the votes with the logged in user.
 
 WebSocket deliverable
 
-For this deliverable I used webSocket to update the votes on the frontend in realtime.
+For this deliverable I used webSocket to update the pokemon team on the frontend in realtime.
 
     Backend listens for WebSocket connection - done!
     Frontend makes WebSocket connection - done!
     Data sent over WebSocket connection - done!
-    WebSocket data displayed - All user votes display in realtime. I'm really proud that this is working. Way cool!
+    WebSocket data displayed - All user pokemon teams are displayed in real time.
 
 React deliverable
 
-For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+For this deliverable I converted the application over to use React. I used vite like the simon-react dliverable does.
 
     Bundled and transpiled - done!
-    Components - Login, voting list, vote are all components.
-    Router - Routing between login and voting components.
-    Hooks - Vue uses class properties instead of UseState to track changes in vote state.
+    Components - Login, pokemon list, and pokemon teams are all components.
+    Router - Routing between login and pokemon team creation components.
+    Hooks - Used UseState to track changes in pokemon teams. 
 
 
 
