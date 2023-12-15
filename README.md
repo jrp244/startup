@@ -93,7 +93,7 @@ For this deliverable I used webSocket to update the pokemon team on the frontend
 
 React deliverable
 
-For this deliverable I converted the application over to use React. I used vite like the simon-react dliverable does.
+For this deliverable I converted the application over to use React. I used vite like the simon-react deliverable does.
 
     Bundled and transpiled - done!
     Components - Login, pokemon list, and pokemon teams are all components.
