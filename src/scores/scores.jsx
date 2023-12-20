@@ -1,113 +1,77 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import './scores.css';
 
-const Scores = () => {
-  const [scores, setScores] = useState([]); // Array of score objects
-  const [showAddScoreForm, setShowAddScoreForm] = useState(false); // Flag for add score form display
+export function Scores() {
+  const [scores, setScores] = useState([]);
+  let imgEl = <img src='https://static.wikia.nocookie.net/shiny-pokemon/images/c/c2/Shiny_ninetales_global_link_art_by_trainerparshen-d6t9mue.png/revision/latest?cb=20170523175452' alt='stock background' />;
 
-  // Function to save score to localStorage (adapt based on your implementation)
-  const saveScoreToLocalStorage = (score) => {
-    const savedScores = JSON.parse(localStorage.getItem('scores')) || [];
-    savedScores.push(score);
-    localStorage.setItem('scores', JSON.stringify(savedScores));
-  };
-
-  // Function to add a new score
-  const handleAddScore = (name, wins, date) => {
-    const newScore = { name, wins, date };
-    setScores([...scores, newScore]);
-    saveScoreToLocalStorage(newScore);
-    setShowAddScoreForm(false);
-  };
-
-  // Function to open a form for adding a new score
-  const openAddScoreForm = () => setShowAddScoreForm(true);
-
-  // Function to clear the new score form
-  const clearAddScoreForm = () => setShowAddScoreForm(false);
-
-  // Function to open a form for editing a score
-  const openEditScoreForm = (row) => {
-    const { cells } = row;
-    const [name, wins, date] = cells.slice(1).map((cell) => cell.textContent);
-    setShowAddScoreForm(true); // Reuse form for editing
-    setScores((prevState) => {
-      const updatedScores = [...prevState];
-      const index = row.rowIndex - 1; // Account for header row
-      updatedScores[index] = { name, wins, date };
-      return updatedScores;
-    });
-  };
-
-  // Function to update saved score data
-  const updateSavedScore = (index, newName, newWins, newDate) => {
-    const scores = JSON.parse(localStorage.getItem('scores')) || [];
-    scores[index] = { name: newName, wins: newWins, date: newDate };
-    localStorage.setItem('scores', JSON.stringify(scores));
-  };
-
-  // Function to handle saving edited score
-  const handleSaveEditedScore = () => {
-    const { cells } = document.getElementById('scoreTable').querySelector('tbody tr:first-child'); // Access edited row
-    const [newName, newWins, newDate] = cells.slice(1).map((cell) => cell.value);
-    const index = scores.findIndex((score) => score.name === newName); // Find edited score index
-    setScores((prevState) => {
-      const updatedScores = [...prevState];
-      updatedScores[index] = { name: newName, wins: newWins, date: newDate };
-      return updatedScores;
-    });
-    updateSavedScore(index, newName, newWins, newDate);
-    setShowAddScoreForm(false); // Close form after saving
-  };
-
-  // Function to handle canceling edit
-  const handleCancelEditScore = () => {
-    const scoresCopy = [...scores]; // Create copy to avoid mutating state directly
-    const editedRow = scoresCopy.pop(); // Remove temporary edited score
-    setScores(scoresCopy);
-    setShowAddScoreForm(false); // Close form
-  };
-
-  // Load scores from localStorage on mount
-  useEffect(() => {
-    const savedScores = JSON.parse(localStorage.getItem('scores')) || [];
-    setScores(savedScores);
+  // Fetch and store scores
+  React.useEffect(() => {
+    fetch('/api/scores')
+      .then((response) => response.json())
+      .then((scores) => {
+        setScores(scores);
+        localStorage.setItem('scores', JSON.stringify(scores));
+      })
+      .catch(() => {
+        const scoresText = localStorage.getItem('scores');
+        if (scoresText) {
+          setScores(JSON.parse(scoresText));
+        }
+      });
   }, []);
 
-  // Handle delete all scores
-  const handleDeleteScores = () => {
-    if (window.confirm('Are you sure you want to delete all scores?')) {
-      setScores([]);
-      localStorage.removeItem('scores');
-    }
+  // Define state for user inputs
+  const [newScoreName, setNewScoreName] = useState('');
+  const [newScoreValue, setNewScoreValue] = useState(0);
+
+  // Handle score submission
+  const handleSubmitScore = () => {
+    if (!newScoreName || !newScoreValue) return; // Basic validation
+
+    const newScore = {
+      name: newScoreName,
+      score: newScoreValue,
+      date: new Date().toISOString(),
+    };
+
+    // Update scores (replace this with your actual API call/storage logic)
+    setScores([...scores, newScore]);
+
+    // Reset input fields
+    setNewScoreName('');
+    setNewScoreValue(0);
   };
 
-  // Handle clear displayed scores
-  const handleClearDisplayedScores = () => {
-    if (window.confirm('Clear all scores from the display?')) {
-      setScores([]);
+  // Generate score rows
+  const scoreRows = [];
+  if (scores.length) {
+    for (const [i, score] of scores.entries()) {
+      scoreRows.push(
+        <tr key={i}>
+          <td>{i}</td>
+          <td>{score.name.split('@')[0]}</td>
+          <td>{score.score}</td>
+          <td>{score.date}</td>
+        </tr>
+      );
     }
-  };
-
-  // ... remaining code from previous version ...
+  } else {
+    scoreRows.push(
+      <tr key='0'>
+        <td colSpan='4'>Be the first to score</td>
+      </tr>
+    );
+  }
 
   return (
-    <div className={styles.scoresPage}>
-      <button onClick={handleAddScore} className={styles.addScoreButton}>
-        Add Score
-      </button>
-      <button onClick={handleEditScores} className={styles.editScoresButton}>
-        Edit Scores
-      </button>
-      <button onClick={handleDeleteScores} className={styles.deleteScoresButton}>
-        Delete Scores
-      </button>
-      <button onClick={handleClearDisplayedScores} className={styles.clearScoresButton}>
-        Clear Scores
-      </button>
-
-      <table id="scoreTable">
-        <thead>
+    <main className='container-fluid bg-secondary text-center'>
+      <div id='picture' className='picture-box'>
+          {imgEl}
+        </div>
+      <table className='table table-warning table-striped-columns'>
+        <thead className='table-dark'>
           <tr>
             <th>#</th>
             <th>Name</th>
@@ -116,23 +80,34 @@ const Scores = () => {
           </tr>
         </thead>
         <tbody>
-          {scores.map((score, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{score.name}</td>
-              <td>{score.wins}</td>
-              <td>{score.date}</td>
-              {/* Add edit button conditionally */}
-              {/* Implement edit form based on handleEditScore and handleCancelEditScore */}
-            </tr>
-          ))}
+          {scoreRows}
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                value={newScoreName}
+                onChange={(e) => setNewScoreName(e.target.value)}
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                placeholder="Enter Score"
+                value={newScoreValue}
+                onChange={(e) => setNewScoreValue(parseInt(e.target.value))}
+              />
+            </td>
+            <td>
+              <input type="date" disabled />
+            </td>
+            <td>
+              <button onClick={handleSubmitScore}>Submit Score</button>
+            </td>
+          </tr>
         </tbody>
       </table>
-
-      {/* Render add score form conditionally based on showAddScoreForm */}
-      {/* Implement add score form with input fields and handleSaveScore and handleCloseAddScoreForm */}
-
-    </div>
+    </main>
   );
-};
-export default Scores;
+}

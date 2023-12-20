@@ -15,11 +15,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='body bg-dark text-light'>
+      <div className='body bg-primary text-light'>
         <header className='container-fluid'>
-          <nav className='navbar fixed-top navbar-dark'>
+          <nav className='navbar navbar-expand-lg bg-danger'>
             <div className='navbar-brand'>
-              Jaren's Pokemon website<sup>&reg;</sup>
+              Pokemon Website<sup>&reg;</sup>
             </div>
             <menu className='navbar-nav'>
               <li className='nav-item'>
@@ -73,9 +73,9 @@ function App() {
 
         <footer className='bg-dark text-dark text-muted'>
           <div className='container-fluid'>
-            <span className='text-reset'>Jaren Petersen's Github</span>
+            <span className='text-reset'>Jaren Petersen</span>
             <a className='text-reset' href='https://github.com/jrp244/startup'>
-              2023 Pokemon Website
+              Source
             </a>
           </div>
         </footer>

@@ -7,7 +7,145 @@ https://github.com/jrp244/startup/blob/main/README.md
 sudo service caddy restart
 npm init -y
 
-It seems you've provided a list of questions covering a wide range of topics related to web development, HTML, CSS, JavaScript, the DOM, and even some questions about command line usage and networking. I'll do my best to provide concise answers to each of these questions:
+Answers to your web development questions:
+
+Ports:
+
+    HTTP: 80
+    HTTPS: 443
+    SSH: 22
+
+HTTP Status Codes:
+
+    300s: Redirects (301 Moved Permanently, 302 Found)
+    400s: Client errors (404 Not Found, 403 Forbidden)
+    500s: Server errors (500 Internal Server Error, 502 Bad Gateway)
+
+Content-Type header: Specifies the type of data contained in the response, allowing browsers to render it correctly (e.g., text/html, application/json).
+
+Cookie attributes:
+
+    Domain: Limits the cookie's availability to subdomains of the specified domain.
+    Path: Limits the cookie's availability to specific paths within the domain.
+    SameSite: Restricts cookie access to prevent third-party tracking (Strict, Lax, None).
+    HTTPOnly: Protects the cookie from being accessed by client-side scripts, enhancing security.
+
+Express middleware example:
+
+Given middleware that logs the URL path:
+
+console.log('URL:', req.url);
+
+For GET /foo/bar, the console will log:
+
+console.log('URL:', '/foo/bar');
+
+Express service code and fetch:
+
+Assuming the service responds with the user's name:
+JavaScript
+
+fetch('/user')
+  .then(response => response.json())
+  .then(data => console.log(data.name)); // logs the user's name
+
+Use code with caution. Learn more
+
+MongoDB query:
+
+Selects documents where:
+
+    cost is greater than 10 ($gt: 10)
+    name contains "fran" (/fran./*) (case-insensitive with regex)
+
+Password storage:
+
+Never store passwords directly! Use a secure hash function (e.g., bcrypt) with a random salt to generate a unique hash for each password.
+
+Node.js service and websockets:
+
+Assuming the service sends a message on connection:
+
+    The browser console will log the received message.
+
+Websockets:
+
+A real-time, bi-directional communication protocol for web applications.
+
+JSX:
+
+An extension of JavaScript that allows embedding HTML-like syntax within JavaScript code. Curly braces render dynamic content within JSX elements.
+
+React component: Welcome & App:
+
+Will generate:
+HTML
+
+<h1>Hello, Sara</h1>
+<h1>Hello, Cahal</h1>
+<h1>Hello, Edite</h1>
+
+Use code with caution. Learn more
+
+React component: Numbers:
+
+Will generate:
+HTML
+
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+
+Use code with caution. Learn more
+
+React component: Example:
+
+Keeps track of clicks and displays the count. Clicking the button increases the count and updates the displayed value.
+
+React Hooks:
+
+Functions introduced in React v16.8 for managing state, side effects, and other functionality.
+
+useEffect hook:
+
+Triggers side effects after rendering, like fetching data, setting up subscriptions, or performing cleanup.
+
+React router code:
+
+Defines routes for different components (Layout, Home, Blogs, etc.) and handles navigation (<Routes> and Route).
+
+npm:
+
+The primary package manager for Node.js projects, allowing installation and management of third-party libraries and dependencies.
+
+package.json:
+
+Manages dependencies, scripts, and configuration for a npm project.
+
+fetch function:
+
+A browser API for fetching resources (e.g., data) from a server asynchronously.
+
+Node.js:
+
+A JavaScript runtime environment used for server-side scripting and building back-end applications.
+
+Vite:
+
+A next-generation web bundler offering faster build times and hot module replacement for development.
+
+
+
+
+
+
+
+
+
 
     In the following code, what does the link element do?
         The link element is used in HTML to define relationships between the current document and external resources, such as stylesheets. It's commonly used to link to external CSS files.
@@ -435,5 +573,4 @@ Promise.prototype.finally()
 Promise.prototype.then()
 
     Appends fulfillment and rejection handlers to the promise, and returns a new promise resolving to the return value of the called handler, or to its original settled value if the promise was not handled (i.e. if the relevant handler onFulfilled or onRejected is not a function).
-
 
